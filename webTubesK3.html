@@ -1,318 +1,321 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standar Operasional Prosedur PT PAMAPERSADA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+80s+Fade&display=swap"
-        rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #e67e22;
-            --background: #f9f9f9;
-            --text: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standar Operasional Prosedur PT PAMAPERSADA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+80s+Fade&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #e67e22;
+      --background: #f9f9f9;
+      --text: #333;
+    }
 
-        body {
-            font-family: 'Oswald', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background);
-            color: var(--text);
-        }
+    body {
+      font-family: 'Oswald', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--text);
+    }
 
-        nav {
-            background: url('https://wbpu.co.id/wp-content/uploads/2023/10/Banner-paling-atas-scaled.jpg') center/cover no-repeat;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
+    nav {
+      background: url('https://wbpu.co.id/wp-content/uploads/2023/10/Banner-paling-atas-scaled.jpg') center/cover no-repeat;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
 
-        nav::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 0;
-        }
+    nav::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 0;
+    }
 
-        nav * {
-            position: relative;
-            z-index: 1;
-        }
+    nav * {
+      position: relative;
+      z-index: 1;
+    }
 
-        nav h1 {
-            font-family: "Playfair Display", serif;
-            margin: 0;
-            font-size: 26px;
-            letter-spacing: 1px;
-            color: white;
-        }
+    nav h1 {
+      font-family: "Playfair Display", serif;
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: white;
+    }
 
-        nav p {
-            font-size: 14px;
-            margin-top: 5px;
-            color: #e0e0e0;
-        }
+    nav p {
+      font-size: 14px;
+      margin-top: 5px;
+      color: #e0e0e0;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-        nav ul li {
-            background-color: rgba(61, 79, 97, 0.8);
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            color: white;
-            backdrop-filter: blur(2px);
-        }
+    nav ul li {
+      background-color: rgba(61, 79, 97, 0.8);
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: white;
+      backdrop-filter: blur(2px);
+    }
 
-        nav ul li:hover,
-        nav ul li.selected {
-            background-color: var(--accent);
-        }
+    nav ul li:hover,
+    nav ul li.selected {
+      background-color: var(--accent);
+    }
 
-        section {
-            display: none;
-            padding: 30px;
-            background-color: white;
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+    section {
+      display: none;
+      padding: 30px;
+      background-color: white;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        section.active {
-            display: block;
-        }
+    section.active {
+      display: block;
+    }
 
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
 
-        ul li {
-            margin-bottom: 5px;
-        }
+    ul li {
+      margin-bottom: 5px;
+    }
 
-        #popup {
-            transition: all 0.3s ease;
-        }
-    </style>
+    #popup {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 
 <body>
 
-    <nav>
-        <h1>Standar Operasional Prosedur Tambang</h1>
-        <p>Tugas Besar Keselamatan dan kesehatan kerja</p>
-        <ul>
-            <li onclick="showSection('profil')">PROFIL KELOMPOK</li>
-            <li onclick="showSection('perusahaan')">PERUSAHAAN</li>
-            <li onclick="showSection('sop')">SOP</li>
-            <li onclick="showSection('proses')">PROSES</li>
-            <li onclick="showSection('list5')">LIST 5</li>
-            <li onclick="showSection('list6')">LIST 6</li>
-        </ul>
-    </nav>
+  <nav>
+    <h1>Standar Operasional Prosedur Tambang</h1>
+    <p>Tugas Besar Keselamatan dan kesehatan kerja</p>
+    <ul>
+      <li onclick="showSection('profil')">PROFIL KELOMPOK</li>
+      <li onclick="showSection('perusahaan')">PERUSAHAAN</li>
+      <li onclick="showSection('sop')">SOP</li>
+      <li onclick="showSection('proses')">PROSES</li>
+      <li onclick="showSection('list5')">LIST 5</li>
+      <li onclick="showSection('list6')">LIST 6</li>
+    </ul>
+  </nav>
 
-    <section id="profil" class="active">
-        <h2>Profil Kelompok</h2>
-        <p>Nama Kelompok: Anakan Tambang</p>
-        <ul>
-            <li>Al Fath Raya Maulana_254107020018</li>
-            <li>Ghulam El Firdausy_254107020203</li>
-            <li>Muhammad Rayyan Abie Dewanata_254107020195</li>
-            <li>Raffael Putra Masshaby_254107020201</li>
-            <li>Rajwa Ega Ganeswara_254107020205</li>
-        </ul>
-    </section>
+  <section id="profil" class="active">
+    <h2>Profil Kelompok</h2>
+    <p>Nama Kelompok: Anakan Tambang</p>
+    <ul>
+      <li>Al Fath Raya Maulana_254107020018</li>
+      <li>Ghulam El Firdausy_254107020203</li>
+      <li>Muhammad Rayyan Abie Dewanata_254107020195</li>
+      <li>Raffael Putra Masshaby_254107020201</li>
+      <li>Rajwa Ega Ganeswara_254107020205</li>
+    </ul>
+  </section>
 
-    <section id="perusahaan">
-        <h2>PT PAMAPERSADA</h2>
-        <p>Sebagai salah satu kontraktor pertambangan batubara terbesar di dunia, PT Pamapersada Nusantara memiliki
-            keahlian yang luas dan pemahaman yang mendalam dalam pengembangan dan pengoperasian tambang batubara.</p>
-        <p><strong></strong>Sejarah & Struktur :</p>
-        <ul>
-            <li>Didirikan : Divisi penyewaan alat berat PT United Tractors – 1974.</li>
-            <li>Menjadi entitas mandiri : 1993.</li>
-            <li>Induk perusahaan : Astra International melalui PT United Tractors.</li>
-            <li>Fokus bisnis : Jasa kontraktor pertambangan.</li>
-        </ul>
-    </section>
+  <section id="perusahaan">
+    <h2>PT PAMAPERSADA</h2>
+    <p>Sebagai salah satu kontraktor pertambangan batubara terbesar di dunia, PT Pamapersada Nusantara memiliki
+      keahlian yang luas dan pemahaman yang mendalam dalam pengembangan dan pengoperasian tambang batubara.</p>
+    <p><strong></strong>Sejarah & Struktur :</p>
+    <ul>
+      <li>Didirikan : Divisi penyewaan alat berat PT United Tractors – 1974.</li>
+      <li>Menjadi entitas mandiri : 1993.</li>
+      <li>Induk perusahaan : Astra International melalui PT United Tractors.</li>
+      <li>Fokus bisnis : Jasa kontraktor pertambangan.</li>
+    </ul>
+  </section>
 
-    <section id="sop">
-        <h2>Standar Operasional Prosedur perusahaan</h2>
+  <section id="sop">
+    <h2>Standar Operasional Prosedur perusahaan</h2>
 
-        <h3>Tentang Prosedur Perusahaan :</h3>
-        <p>1. Sistem penambangan berjenjang (Reclamation area)...</p>
+    <h3>Tentang Prosedur Perusahaan :</h3>
+    <p>1. Sistem penambangan berjenjang (Reclamation area)...</p>
 
-<<<<<<< HEAD
-<p>2.	Pemasangan rambu rambu lalu lintas di area tambang</p>
-<p> Untuk menjaga keselamatan pekerja dan kendaraan operasional, memberikan informasi yang jelas, mencegah kecelakaan.
-<p>Macam macam rambu lalu lintas tambang :</p>
-1.	Perintah    : Mengatur Tindakan wajib (Stop, belok kanan)<br>
-2.	Peringatan  : Memberi info potensi bahaya ( tikungan tajam, tanjakan)<br>
-3.	Petunjuk    : Memberi arah atau info Lokasi (Zona parkir, PIT A)<br>
-4.	Larangan    : Melarang Tindakan tertentu (Dilarang parkir, Dilarang mendahului)<br>
-<h4>Spesifikasi rambu tambang :</h4>
-1.	Material : Plat galvanis atau plastic tahan cuaca<br>
-2.	Ukuran : Minimum 60x60 cm, disesuaikan dengan jarak pandang<br>
-3.	Warna : Sesuai standar SNI <br>
-4.	Pemasangan : Ketinggian 1.5 – 2 meter dari permukaan jalan, jarak minimal 50 meter sebelum titik kritis<br>
-<p>Pemeiharaan dan inspeksi :</p>
-1.	Frekuensi : Minimal 1 bulan sekali<br>
-2.	Kegiatan : Pengecekan fisik, kebersihan, dan visibilitas<br>
-3.	Tindakan : Ganti rambu yang rusak, bersihkan rambu yang buram, laporkan ke supervisor<br>
-=======
-        <p onclick="togglePopup()" style="cursor: pointer; color: var(--accent); font-weight: bold;">
-            Reclamation area? Klik untuk detail
-        </p>
->>>>>>> dba0dae8ee38d09e199f0397ecb49cc851fcae6f
+    <p>2. Pemasangan rambu rambu lalu lintas di area tambang</p>
+    <p> Untuk menjaga keselamatan pekerja dan kendaraan operasional, memberikan informasi yang jelas, mencegah
+      kecelakaan.
+    <p>Macam macam rambu lalu lintas tambang :</p>
+    1. Perintah : Mengatur Tindakan wajib (Stop, belok kanan)<br>
+    2. Peringatan : Memberi info potensi bahaya ( tikungan tajam, tanjakan)<br>
+    3. Petunjuk : Memberi arah atau info Lokasi (Zona parkir, PIT A)<br>
+    4. Larangan : Melarang Tindakan tertentu (Dilarang parkir, Dilarang mendahului)<br>
+    <h4>Spesifikasi rambu tambang :</h4>
+    1. Material : Plat galvanis atau plastic tahan cuaca<br>
+    2. Ukuran : Minimum 60x60 cm, disesuaikan dengan jarak pandang<br>
+    3. Warna : Sesuai standar SNI <br>
+    4. Pemasangan : Ketinggian 1.5 – 2 meter dari permukaan jalan, jarak minimal 50 meter sebelum titik kritis<br>
+    <p>Pemeiharaan dan inspeksi :</p>
+    1. Frekuensi : Minimal 1 bulan sekali<br>
+    2. Kegiatan : Pengecekan fisik, kebersihan, dan visibilitas<br>
+    3. Tindakan : Ganti rambu yang rusak, bersihkan rambu yang buram, laporkan ke supervisor<br>
+    
+    <p onclick="togglePopup()" style="cursor: pointer; color: var(--accent); font-weight: bold;">
+      Reclamation area? Klik untuk detail
+    </p>
 
-        <div id="popup"
-            style="display: none; padding: 15px; background-color: #fff3e0; border: 1px solid #e67e22; border-radius: 5px; margin-top: 10px;">
-            <p><strong>Memulihkan area tambang...</strong></p>
-            <ul>
-                <li>Landform reshaping</li>
-                <li>Soil treatment</li>
-                <li>Revegetasi</li>
-                <li>Drainase dan air</li>
-                <li>Monitoring</li>
-            </ul>
-        </div>
-
-
-<p>4.	Pengelolaan dan pengendalian peralatan bergerak dan bermotor berupa :</p>
--	 Perawatan terencana
--	P2H (Pelaksanaan Perawatan Harian)
--	Larangan pengoperasian alat tanpa ijin
--	Persiapan dalam keadaan darurat
--	Pemenuhan kelengkapan (persyaratan pada peralatan)
--	Ijin kendaraan untuk menuju site
-
-<p>Adanya alat alat peringatan pada kendaraan berupa :</p>
-a.	Sistem klakson
-b.	Sistem alarm mundur
-c.	Rotary lamp
-d.	Bendera (buggy whip) khusus kendaraan kecil (kendaraan sarana)
+    <div id="popup"
+      style="display: none; padding: 15px; background-color: #fff3e0; border: 1px solid #e67e22; border-radius: 5px; margin-top: 10px;">
+      <p><strong>Memulihkan area tambang...</strong></p>
+      <ul>
+        <li>Landform reshaping</li>
+        <li>Soil treatment</li>
+        <li>Revegetasi</li>
+        <li>Drainase dan air</li>
+        <li>Monitoring</li>
+      </ul>
+    </div>
 
 
-<p>6.	Alat pelindung diri (APD)</p> 
-APD di area tambang mengacu pada PSMS elemen 12 :
--	Safety Helmet
--	Safety Shoes
--	Safety Belt
--	Masker
--	Ear plug dan ear muff
--	Safety Glove
--	Apron
--	Safety googles
+    <p>4. Pengelolaan dan pengendalian peralatan bergerak dan bermotor berupa :</p>
+    - Perawatan terencana
+    - P2H (Pelaksanaan Perawatan Harian)
+    - Larangan pengoperasian alat tanpa ijin
+    - Persiapan dalam keadaan darurat
+    - Pemenuhan kelengkapan (persyaratan pada peralatan)
+    - Ijin kendaraan untuk menuju site
 
-<p>Upaya penanggulangan Kebakaran :</p>
--	Penyediaan APAR, setiap 15 meter pada setiap ruangan atau bangunan, dan 1 APAR untuk setiap mobil sarana dan alat alat berat
--	Pengecekan dan rekondisi APAR setiap 6 bulan sekali
--	Pelatihan pemadam kebakaran oleh SHE Division
+    <p>Adanya alat alat peringatan pada kendaraan berupa :</p>
+    a. Sistem klakson
+    b. Sistem alarm mundur
+    c. Rotary lamp
+    d. Bendera (buggy whip) khusus kendaraan kecil (kendaraan sarana)
 
-<p>8.	Kesiapan dalam keadaan darurat</p> 
-Yang terdapat pada elemen PSMS :
-a.	Team penanggulangan keadaan darurat :
-8.1	First aid ticker 
-8.2	Komunikasi
-8.3	Supervisor ( yang mengorganisir alat alat yang diperlukan dalam menangani kecelakaan )
-8.4	Team ( yang bertugas membantu memperlancar pengoperasian alat )
-b.	Aturan penggunaan radio
-c.	Jalur informasi
-d.	Laporan Tertulis
 
-</p>
-        <div class="section">
-          <h3>4. Pemasangan rambu lalu lintas di area tambang</h3>
-          <p>Pemasangan rambu lalu lintas di area tambang bertujuan untuk menjaga keselamatan pekerja dan kendaraan operasional, memberikan informasi yang jelas, serta mencegah kecelakaan.</p>
-          <p>Macam-macam rambu lalu lintas tambang :</p>
-          <ul>
-            <li>Perintah: Mengatur tindakan wajib (Stop, belok kanan).</li>
-            <li>Peringatan: Memberi info potensi bahaya (tikungan tajam, tanjakan).</li>
-            <li>Petunjuk: Memberi arah atau info lokasi (Zona parkir, PIT A).</li>
-            <li>Larangan: Melarang tindakan tertentu (Dilarang parkir, Dilarang mendahului).</li>
-          </ul>
-        </div>
+    <p>6. Alat pelindung diri (APD)</p>
+    APD di area tambang mengacu pada PSMS elemen 12 :
+    - Safety Helmet
+    - Safety Shoes
+    - Safety Belt
+    - Masker
+    - Ear plug dan ear muff
+    - Safety Glove
+    - Apron
+    - Safety googles
 
-        <div class="section">
-          <h3>5. Penyediaan mobil ambulans</h3>
-          <p>Penyediaan ambulans di tempat kerja berfungsi sebagai unit medis bergerak untuk memberikan pertolongan pertama sebelum dirujuk ke fasilitas kesehatan.</p>
-        </div>
+    <p>Upaya penanggulangan Kebakaran :</p>
+    - Penyediaan APAR, setiap 15 meter pada setiap ruangan atau bangunan, dan 1 APAR untuk setiap mobil sarana dan alat
+    alat berat
+    - Pengecekan dan rekondisi APAR setiap 6 bulan sekali
+    - Pelatihan pemadam kebakaran oleh SHE Division
 
-        <div class="section">
-          <h3>6. Penyuluhan Kesehatan pada karyawan kantin dan catering</h3>
-          <p>Penyuluhan dan pelatihan higienis makanan untuk karyawan kantin dan jasa boga (catering).</p>
-        </div>
+    <p>8. Kesiapan dalam keadaan darurat</p>
+    Yang terdapat pada elemen PSMS :
+    a. Team penanggulangan keadaan darurat :
+    8.1 First aid ticker
+    8.2 Komunikasi
+    8.3 Supervisor ( yang mengorganisir alat alat yang diperlukan dalam menangani kecelakaan )
+    8.4 Team ( yang bertugas membantu memperlancar pengoperasian alat )
+    b. Aturan penggunaan radio
+    c. Jalur informasi
+    d. Laporan Tertulis
 
-        <div class="section">
-          <h3>7. Kotak P3K di lokasi strategis</h3>
-          <p>Penyediaan kotak-kotak P3K di tempat strategis sebagai upaya pertolongan dini kepada karyawan yang mengalami kecelakaan.</p>
-          <p class="small">Perm
-    </section>
+    </p>
+    <div class="section">
+      <h3>4. Pemasangan rambu lalu lintas di area tambang</h3>
+      <p>Pemasangan rambu lalu lintas di area tambang bertujuan untuk menjaga keselamatan pekerja dan kendaraan
+        operasional, memberikan informasi yang jelas, serta mencegah kecelakaan.</p>
+      <p>Macam-macam rambu lalu lintas tambang :</p>
+      <ul>
+        <li>Perintah: Mengatur tindakan wajib (Stop, belok kanan).</li>
+        <li>Peringatan: Memberi info potensi bahaya (tikungan tajam, tanjakan).</li>
+        <li>Petunjuk: Memberi arah atau info lokasi (Zona parkir, PIT A).</li>
+        <li>Larangan: Melarang tindakan tertentu (Dilarang parkir, Dilarang mendahului).</li>
+      </ul>
+    </div>
 
-    <section id="proses">
-        <h2>Proses Produksi</h2>
+    <div class="section">
+      <h3>5. Penyediaan mobil ambulans</h3>
+      <p>Penyediaan ambulans di tempat kerja berfungsi sebagai unit medis bergerak untuk memberikan pertolongan pertama
+        sebelum dirujuk ke fasilitas kesehatan.</p>
+    </div>
+
+    <div class="section">
+      <h3>6. Penyuluhan Kesehatan pada karyawan kantin dan catering</h3>
+      <p>Penyuluhan dan pelatihan higienis makanan untuk karyawan kantin dan jasa boga (catering).</p>
+    </div>
+
+    <div class="section">
+      <h3>7. Kotak P3K di lokasi strategis</h3>
+      <p>Penyediaan kotak-kotak P3K di tempat strategis sebagai upaya pertolongan dini kepada karyawan yang mengalami
+        kecelakaan.</p>
+      <p class="small">Perm
+  </section>
+
+  <section id="proses">
+    <h2>Proses Produksi</h2>
 
     <h3>Tentang produksi dan alat :</h3>
     <p>
-        Pertambangan dilakukan secara terbuka dengan menggali lapisan batubara menggunakan alat berat seperti
-        excavator dan dozer. Batubara kemudian diangkut ke stockyard dengan dumptruck untuk dihancurkan (crushing). 
-        Setelah itu, batubara dibawa ke portsite dan dikirim ke pelanggan menggunakan kapal ponton.
+      Pertambangan dilakukan secara terbuka dengan menggali lapisan batubara menggunakan alat berat seperti
+      excavator dan dozer. Batubara kemudian diangkut ke stockyard dengan dumptruck untuk dihancurkan (crushing).
+      Setelah itu, batubara dibawa ke portsite dan dikirim ke pelanggan menggunakan kapal ponton.
     </p>
     <h4>Alat-alat berat yang digunakan dalam penambangan batubara terbuka:</h4>
-                <li>Excavator — menggali tanah dan batubara.</li>
-                <li>Dozer — meratakan/mengumpulkan tanah dan batubara.</li>
-                <li>Grader — meratakan jalan tambang dan hauling.</li>
-                <li>Dumptruck — pengangkutan batubara ke stockpile.</li>
-                <li>Heavy Duty &amp; Artikulit — pengangkutan tanah galian ke disposal.</li>
-                <li>Water truck — penyiraman jalan berdebu.</li>
-                <li>Forklift &amp; Crane — alat angkat di workshop/area tambang.</li>               
-            </ul>
-        </div>
+    <li>Excavator — menggali tanah dan batubara.</li>
+    <li>Dozer — meratakan/mengumpulkan tanah dan batubara.</li>
+    <li>Grader — meratakan jalan tambang dan hauling.</li>
+    <li>Dumptruck — pengangkutan batubara ke stockpile.</li>
+    <li>Heavy Duty &amp; Artikulit — pengangkutan tanah galian ke disposal.</li>
+    <li>Water truck — penyiraman jalan berdebu.</li>
+    <li>Forklift &amp; Crane — alat angkat di workshop/area tambang.</li>
+    </ul>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="list5">
-        <h2>Pembinaan</h2>
-        <p>Isi tambahan...</p>
-    </section>
+  <section id="list5">
+    <h2>Pembinaan</h2>
+    <p>Isi tambahan...</p>
+  </section>
 
-    <section id="list6">
-        <h2>List 6</h2>
-        <p>Isi tambahan...</p>
-    </section>
+  <section id="list6">
+    <h2>List 6</h2>
+    <p>Isi tambahan...</p>
+  </section>
 
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
 
-        function togglePopup() {
-            const popup = document.getElementById("popup");
-            popup.style.display = popup.style.display === "none" ? "block" : "none";
-        }
-    </script>
+    function togglePopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = popup.style.display === "none" ? "block" : "none";
+    }
+  </script>
 
 </body>
 
