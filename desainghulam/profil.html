@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Profesional Kelompok [Nama Kelompok]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Bagian CSS yang Lebih Elegan --- */
+        :root {
+            --warna-utama: #1a2a47;
+            /* Biru Gelap/Navy untuk kesan profesional */
+            --warna-aksen: #007bff;
+            /* Aksen Biru Muda untuk highlight */
+            --warna-latar: #ffffff;
+            --warna-latar-kartu: #f8f9fa;
+            /* Latar belakang kartu yang lebih terang */
+            --warna-teks: #343a40;
+            /* Hitam semi-gelap */
+            --font-judul: 'Poppins', sans-serif;
+            --font-teks: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-teks);
+            margin: 0;
+            padding: 0;
+            background-color: var(--warna-latar-kartu);
+            color: var(--warna-teks);
+            line-height: 1.6;
+        }
+
+        /* --- CSS Tambahan untuk Menu Beranda/Navigasi --- */
+        .top-nav {
+            background-color: var(--warna-utama);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: flex-start;
+            /* Posisikan ke kiri */
+        }
+
+        .nav-link {
+            font-family: var(--font-judul);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--warna-aksen);
+        }
+
+        /* --- Akhir CSS Navigasi --- */
+
+
+        .header-profil {
+            background-color: var(--warna-utama);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-profil h1 {
+            font-family: var(--font-judul);
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        .header-profil p {
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 50px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-family: var(--font-judul);
+            text-align: center;
+            color: var(--warna-utama);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .grid-anggota {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .kartu-anggota {
+            background-color: var(--warna-latar);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .kartu-anggota:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .foto-container {
+            position: relative;
+            padding-top: 100%;
+            /* Rasio 1:1 untuk gambar */
+            overflow: hidden;
+        }
+
+        .foto-profil {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Placeholder styling */
+            background-color: #ccc;
+        }
+
+        .detail-anggota {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .detail-anggota h3 {
+            font-family: var(--font-judul);
+            color: var(--warna-utama);
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .detail-anggota p strong {
+            color: var(--warna-aksen);
+        }
+
+        .detail-anggota p {
+            margin: 5px 0 15px 0;
+            font-size: 0.95em;
+            color: #6c757d;
+        }
+
+        .keahlian-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .keahlian-list li {
+            background-color: #e9ecef;
+            color: var(--warna-utama);
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+
+        .detail-tambahan {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ced4da;
+            text-align: left;
+            display: none;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #495057;
+        }
+
+        .detail-tambahan strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--warna-utama);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-nav">
+        <div class="nav-link-container">
+            <a href="EL.html" class="nav-link">BERANDA</a>
+        </div>
+    </div>
+
+    <a name="top"></a>
+    <header class="header-profil">
+        <h1>Tim Inovasi Kami: [Nama Kelompok Anda]</h1>
+        <p>Mendorong batas-batas [Bidang Industri Anda] dengan keahlian dan kolaborasi.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Anggota Tim & Keahlian Inti</h2>
+
+        <div class="grid-anggota">
+
+            <div class="kartu-anggota" data-id="1">
+                <div class="foto-container">
+                    <img src="placeholder-foto-1.jpg" alt="Foto [Nama Anggota 1]" class="foto-profil">
+                </div>
+                <div class="detail-anggota">
+                    <h3>Nama Anggota 1</h3>
+                    <p><strong>Peran:</strong> Chief Strategy Officer</p>
+                    <ul class="keahlian-list">
+                        <li>Agile & Scrum</li>
+                        <li>Analisis Bisnis</li>
+                        <li>Kepemimpinan</li>
+                    </ul>
+                    <div class="detail-tambahan">
+                        <strong>Kutipan:</strong> "Visibilitas penuh dan tujuan yang jelas adalah kunci kesuksesan
+                        setiap proyek."
+                        <br>
+                        Email: anggota1@email.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="kartu-anggota" data-id="2">
+                <div class="foto-container">
+                    <img src="placeholder-foto-2.jpg" alt="Foto [Nama Anggota 2]" class="foto-profil">
+                </div>
+                <div class="detail-anggota">
+                    <h3>Nama Anggota 2</h3>
+                    <p><strong>Peran:</strong> Lead Software Engineer</p>
+                    <ul class="keahlian-list">
+                        <li>Full-Stack Development</li>
+                        <li>Python/Django</li>
+                        <li>Cloud Architecture</li>
+                    </ul>
+                    <div class="detail-tambahan">
+                        <strong>Kutipan:</strong> "Membangun solusi yang efisien dan terukur adalah passion saya."
+                        <br>
+                        Email: anggota2@email.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="kartu-anggota" data-id="3">
+                <div class="foto-container">
+                    <img src="placeholder-foto-3.jpg" alt="Foto [Nama Anggota 3]" class="foto-profil">
+                </div>
+                <div class="detail-anggota">
+                    <h3>Nama Anggota 3</h3>
+                    <p><strong>Peran:</strong> UX/CX Specialist</p>
+                    <ul class="keahlian-list">
+                        <li>Figma Prototyping</li>
+                        <li>User Research</li>
+                        <li>Desain Interaksi</li>
+                    </ul>
+                    <div class="detail-tambahan">
+                        <strong>Kutipan:</strong> "Pengalaman pengguna yang luar biasa datang dari empati yang
+                        mendalam."
+                        <br>
+                        Email: anggota3@email.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="kartu-anggota" data-id="4">
+                <div class="foto-container">
+                    <img src="placeholder-foto-4.jpg" alt="Foto [Nama Anggota 4]" class="foto-profil">
+                </div>
+                <div class="detail-anggota">
+                    <h3>Nama Anggota 4</h3>
+                    <p><strong>Peran:</strong> Digital Marketing Strategist</p>
+                    <ul class="keahlian-list">
+                        <li>Data Analytics</li>
+                        <li>Content Marketing</li>
+                        <li>Social Media Ads</li>
+                    </ul>
+                    <div class="detail-tambahan">
+                        <strong>Kutipan:</strong> "Jika tidak dapat diukur, itu hanyalah opini. Kami fokus pada hasil."
+                        <br>
+                        Email: anggota4@email.com
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const kartuAnggota = document.querySelectorAll('.kartu-anggota');
+
+            kartuAnggota.forEach(kartu => {
+                kartu.addEventListener('click', function () {
+                    const detailTambahan = kartu.querySelector('.detail-tambahan');
+
+                    // Logic untuk menampilkan/menyembunyikan detail
+                    if (detailTambahan.style.display === 'block') {
+                        detailTambahan.style.display = 'none';
+                    } else {
+                        // Sembunyikan semua detail tambahan lainnya sebelum menampilkan yang baru
+                        document.querySelectorAll('.detail-tambahan').forEach(d => {
+                            d.style.display = 'none';
+                        });
+
+                        detailTambahan.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

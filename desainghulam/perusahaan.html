@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Perusahaan Tambang [Nama Perusahaan]</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@300;400&display=swap"
+    rel="stylesheet">
+  <style>
+    /* --- Bagian CSS Profesional --- */
+    :root {
+      --warna-primer: #1c2833;
+      /* Dark Navy/Charcoal - Kuat */
+      --warna-sekunder: #d4af37;
+      /* Gold/Emas Tua - Mewah/Kekuatan */
+      --warna-latar: #f4f4f4;
+      --warna-teks: #333;
+      --font-judul: 'Poppins', sans-serif;
+      --font-teks: 'Merriweather', serif;
+    }
+
+    body {
+      font-family: var(--font-teks);
+      margin: 0;
+      padding: 0;
+      background-color: var(--warna-latar);
+      color: var(--warna-teks);
+      line-height: 1.7;
+    }
+
+    /* HEADER & NAVIGATION */
+    .header-perusahaan {
+      background-color: var(--warna-primer);
+      color: white;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-judul);
+      font-size: 1.8em;
+      font-weight: 700;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--warna-sekunder);
+      /* Aksen emas pada nama perusahaan */
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu li a {
+      font-family: var(--font-judul);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+      /* Garis bawah elegan */
+      font-weight: 600;
+    }
+
+    .menu li a:hover,
+    .menu li a.active {
+      color: var(--warna-sekunder);
+      border-bottom: 2px solid var(--warna-sekunder);
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 30px;
+    }
+
+    .section-profil {
+      background-color: white;
+      padding: 40px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      /* Diatur oleh JS */
+      transform: translateY(20px);
+      /* Diatur oleh JS */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: none;
+      /* Sembunyikan semua secara default */
+    }
+
+    .section-profil.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-profil h2 {
+      font-family: var(--font-judul);
+      color: var(--warna-primer);
+      border-bottom: 3px solid var(--warna-sekunder);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      font-size: 2em;
+    }
+
+    /* SEJARAH */
+    .sejarah-poin {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .sejarah-tahun {
+      font-family: var(--font-judul);
+      font-size: 1.5em;
+      font-weight: 700;
+      color: var(--warna-sekunder);
+      min-width: 80px;
+      margin-right: 20px;
+      text-align: right;
+    }
+
+    .sejarah-detail {
+      border-left: 2px solid var(--warna-sekunder);
+      padding-left: 20px;
+    }
+
+    /* TUJUAN */
+    .tujuan-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tujuan-list li {
+      font-family: var(--font-judul);
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      padding-left: 30px;
+      position: relative;
+      color: var(--warna-primer);
+    }
+
+    .tujuan-list li:before {
+      content: "⛏";
+      /* Simbol Pahat/Pickaxe atau ikon lain */
+      position: absolute;
+      left: 0;
+      color: var(--warna-sekunder);
+      font-size: 1.2em;
+      top: 0;
+    }
+
+    .tujuan-deskripsi {
+      font-family: var(--font-teks);
+      font-size: 0.95em;
+      color: #555;
+      display: block;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header-perusahaan">
+    <div class="nav-container">
+      <div class="logo">PAMA<span>PERSADA</span></div>
+      <nav>
+        <ul class="menu">
+          <li><a href="#" id="menu-sejarah" class="active" data-target="sejarah">Sejarah Perusahaan</a></li>
+          <li><a href="#" id="menu-tujuan" data-target="tujuan">Tujuan Perusahaan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-content">
+
+    <section id="sejarah" class="section-profil active">
+      <h2>Sejarah Perusahaan</h2>
+      <p>Sejak didirikan, MinePRO telah berkomitmen pada praktik pertambangan yang bertanggung jawab dan inovasi
+        berkelanjutan. Berikut adalah perjalanan penting kami:</p>
+
+      <div class="sejarah-poin">
+        <div class="sejarah-tahun">1995</div>
+        <div class="sejarah-detail">
+          <strong>Pendirian Awal</strong>
+          <p>Perusahaan didirikan dengan fokus pada eksplorasi mineral di wilayah [Nama Lokasi]. Mendapat izin
+            eksploitasi pertama.</p>
+        </div>
+      </div>
+
+      <div class="sejarah-poin">
+        <div class="sejarah-tahun">2008</div>
+        <div class="sejarah-detail">
+          <strong>Ekspansi dan Sertifikasi</strong>
+          <p>Memperluas operasi ke wilayah [Nama Wilayah Baru]. Mendapatkan sertifikasi internasional ISO 14001 untuk
+            manajemen lingkungan.</p>
+        </div>
+      </div>
+
+      <div class="sejarah-poin">
+        <div class="sejarah-tahun">2020</div>
+        <div class="sejarah-detail">
+          <strong>Inovasi Teknologi</strong>
+          <p>Mengimplementasikan teknologi pertambangan otomatis dan robotik untuk meningkatkan efisiensi dan keamanan
+            operasional.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="tujuan" class="section-profil">
+      <h2>Tujuan Perusahaan</h2>
+      <p>Tujuan strategis kami mencakup tiga pilar utama: Operasi Berkelanjutan, Keunggulan Operasional, dan Tanggung
+        Jawab Sosial (CSR).</p>
+
+      <ul class="tujuan-list">
+        <li>
+          Keunggulan Operasional
+          <span class="tujuan-deskripsi">Mencapai tingkat efisiensi dan produktivitas tertinggi melalui adopsi teknologi
+            terdepan dan standar keamanan yang ketat.</span>
+        </li>
+        <li>
+          Keberlanjutan Lingkungan
+          <span class="tujuan-deskripsi">Berkomitmen pada praktik tambang yang ramah lingkungan, termasuk reklamasi
+            lahan pasca-tambang dan pengurangan jejak karbon.</span>
+        </li>
+        <li>
+          Kesejahteraan Komunitas
+          <span class="tujuan-deskripsi">Meningkatkan kualitas hidup masyarakat lokal melalui program pendidikan,
+            kesehatan, dan pemberdayaan ekonomi.</span>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuLinks = document.querySelectorAll('.menu a');
+      const sections = document.querySelectorAll('.section-profil');
+
+      // Fungsi untuk menampilkan seksi yang dipilih
+      function showSection(targetId) {
+        // Sembunyikan semua seksi
+        sections.forEach(section => {
+          section.classList.remove('active');
+          section.style.display = 'none';
+          // Reset animasi
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(20px)';
+        });
+
+        // Tampilkan seksi yang ditargetkan
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.style.display = 'block';
+          // Tunda sedikit untuk memicu transisi/animasi
+          setTimeout(() => {
+            targetSection.classList.add('active');
+          }, 50);
+        }
+      }
+
+      // Fungsi untuk mengaktifkan menu
+      function setActiveMenu(targetElement) {
+        menuLinks.forEach(link => link.classList.remove('active'));
+        targetElement.classList.add('active');
+      }
+
+      // Tambahkan event listener ke setiap menu link
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('data-target');
+          showSection(targetId);
+          setActiveMenu(this);
+        });
+      });
+
+      // Inisialisasi: Tampilkan seksi "Sejarah Perusahaan" saat pertama kali dimuat
+      showSection('sejarah');
+      setActiveMenu(document.getElementById('menu-sejarah'));
+    });
+  </script>
+
+</body>
+
+</html>
