@@ -1,0 +1,130 @@
+/* RESET dan FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Background abu-abu muda yang bersih */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER/NAVBAR */
+.navbar {
+    background-color: #2c3e50; /* Warna gelap untuk header, mirip dengan gambar */
+    color: white;
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff9800; /* Warna aksen oranye/kuning yang mencolok */
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9800; /* Efek hover warna aksen */
+}
+
+/* HERO SECTION (Bagian tengah) */
+.hero-section {
+    /* Tinggi setara dengan 100% dari tinggi viewport dikurangi tinggi header */
+    height: calc(100vh - 60px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Ganti dengan gambar background yang profesional jika diperlukan. 
+       Untuk meniru tampilan abu-abu pada gambar Anda: */
+    background-color: #6c757d; 
+    color: white;
+}
+
+.hero-content {
+    padding: 40px;
+    border-radius: 8px;
+    /* Mengurangi opasitas background untuk fokus pada teks jika ada gambar */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* CTA BUTTONS */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: #ff9800; /* Warna oranye/kuning (Wilmar-like primary color) */
+    color: #2c3e50; /* Teks gelap */
+}
+
+.btn-primary:hover {
+    background-color: #f57c00;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white; /* Tombol sekunder dengan border putih */
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #6c757d;
+}
