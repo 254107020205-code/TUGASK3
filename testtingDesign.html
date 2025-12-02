@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Tambang — PT Pamapersada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --dark: #1f2937;
+      --accent: #f59e0b;
+      --light: #f9fafb;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      margin: 0;
+    }
+    h1, h2, h3 {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      background: var(--dark);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    nav h1 {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: 0.3s;
+    }
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('https://via.placeholder.com/1600x400') center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      margin: 0.3rem;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    .btn-primary:hover {
+      background: #d97706;
+      color: white;
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hidden-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>PAMA</h1>
+    <ul>
+      <li data-target="profil">Profil</li>
+      <li data-target="perusahaan">Perusahaan</li>
+      <li data-target="sop">SOP</li>
+      <li data-target="proses">Proses</li>
+      <li data-target="alatberat">Alat Berat</li>
+      <li data-target="lokasi">Lokasi</li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Tambang Aman & Produktif</h1>
+      <p>Standar Operasional PT Pamapersada Nusantara</p>
+      <a href="#sop" class="btn btn-primary">Lihat SOP</a>
+      <a href="#proses" class="btn btn-outline">Proses Produksi</a>
+    </div>
+  </section>
+
+  <!-- Sections -->
+  <section id="profil" class="hidden-section">
+    <h2>Profil Kelompok</h2>
+    <p>Nama Kelompok: Anakan Tambang</p>
+    <ul>
+      <li>Al Fath Raya Maulana</li>
+      <li>Ghulam El Firdausy</li>
+      <li>Muhammad Rayyan Abie Dewanata</li>
+      <li>Raffael Putra Masshaby</li>
+      <li>Rajwa Ega Ganeswara</li>
+    </ul>
+  </section>
+
+  <section id="perusahaan" class="hidden-section">
+    <h2>PT Pamapersada Nusantara</h2>
+    <p>Kontraktor pertambangan batubara terbesar dengan keahlian pengembangan dan pengoperasian tambang skala besar.</p>
+    <ul>
+      <li>Didirikan: 1974 (Divisi United Tractors)</li>
+      <li>Mandiri: 1993</li>
+      <li>Induk: Astra International</li>
+      <li>Fokus: Jasa kontraktor pertambangan</li>
+    </ul>
+  </section>
+
+  <section id="sop">
+    <h2>Standar Operasional Perusahaan</h2>
+    <p>Rambu lalu lintas, pengendalian alat, APD wajib, proteksi kebakaran, dan kesiapan darurat.</p>
+  </section>
+
+  <section id="proses">
+    <h2>Proses Produksi Tambang Terbuka</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Land Clearing</h3><p>Pembersihan lahan dari vegetasi dan batuan.</p></div>
+      <div class="card"><h3>Top Soil Removal</h3><p>Pemindahan lapisan tanah atas untuk reklamasi.</p></div>
+      <div class="card"><h3>Excavating</h3><p>Penggalian batubara dengan excavator.</p></div>
+      <div class="card"><h3>Loading</h3><p>Pemindahan material ke dumptruck.</p></div>
+      <div class="card"><h3>Hauling</h3><p>Pengangkutan ke stockpile/disposal.</p></div>
+      <div class="card"><h3>Dumping & Spreading</h3><p>Penurunan dan perataan material.</p></div>
+    </div>
+  </section>
+
+  <section id="alatberat">
+    <h2>Alat Berat Operasional</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>Excavator</h3><p>Penggalian dan loading.</p></div>
+      <div class="card"><h3>Dozer</h3><p>Spreading dan ripping.</p></div>
+      <div class="card"><h3>Grader</h3><p>Perataan jalan hauling.</p></div>
+      <div class="card"><h3>Dumptruck</h3><p>Hauling batubara.</p></div>
+      <div class="card"><h3>Water Truck</h3><p>Pengendalian debu.</p></div>
+      <div class="card"><h3>Crane & Forklift</h3><p>Pengangkatan di workshop.</p></div>
+    </div>
+  </section>
+
+  <section id="lokasi">
+    <h2>Lokasi Site</h2>
+    <p>Contoh embed Google Maps:</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300
