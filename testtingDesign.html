@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web Tambang — PT Pamapersada</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --dark: #1f2937;
-      --accent: #f59e0b;
-      --light: #f9fafb;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Web Tambang — PT Pamapersada</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        <style>
+         .hidden-section {
+            display: none;
+        }
+                
+        .card.alat-berat {
+            cursor: pointer; 
+        }
+        .alat-berat-img {
+            display: none; 
+            width: 100%;
+            max-height: 200px; 
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+            :root {
+                --dark: #1f2937;
+                --accent: #f59e0b;
+                --light: #f9fafb;
+            }
+            body {
+                font-family: 'Inter', sans-serif;
       background: var(--light);
       color: var(--dark);
       margin: 0;
@@ -61,106 +76,110 @@
       width: 100%;
     }
 
-.hero {
-  position: relative;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(https://png.pngtree.com/thumb_back/fw800/background/20240409/pngtree-dump-truck-in-limestone-mining-heavy-machinery-mining-in-the-quarry-image_15653517.jpg) center/cover no-repeat;
-  color: white;
-  text-align: center;
-}
 
+    
+    
+    .hero {
+        position: relative;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(https://png.pngtree.com/thumb_back/fw800/background/20240409/pngtree-dump-truck-in-limestone-mining-heavy-machinery-mining-in-the-quarry-image_15653517.jpg) center/cover no-repeat;
+        color: white;
+        text-align: center;
+    }
+    
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
     }
     .hero-content {
-      position: relative;
+        position: relative;
     }
     .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-      margin: 0.3rem;
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        margin: 0.3rem;
     }
     .btn-primary {
-      background: var(--accent);
-      color: var(--dark);
+        background: var(--accent);
+        color: var(--dark);
     }
     .btn-primary:hover {
-      background: #d97706;
-      color: white;
+        background: #d97706;
+        color: white;
     }
     .btn-outline {
-      border: 2px solid white;
-      color: white;
+        border: 2px solid white;
+        color: white;
     }
     .btn-outline:hover {
-      background: white;
-      color: var(--dark);
+        background: white;
+        color: var(--dark);
     }
-
+    
     section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     }
     .grid {
-      display: grid;
-      gap: 1.5rem;
+        display: grid;
+        gap: 1.5rem;
     }
     .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .card {
-      background: white;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: 0.3s;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
     }
     .card:hover {
-      transform: translateY(-4px);
+        transform: translateY(-4px);
     }
     footer {
-      background: var(--dark);
-      color: white;
-      padding: 2rem;
-      text-align: center;
+        background: var(--dark);
+        color: white;
+        padding: 2rem;
+        text-align: center;
     }
-
+    
     .hidden-section {
-      display: none;
+        display: none;
     }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <h1>PAMA</h1>
-    <ul>
-      <li class = "home-btn">Home</li>
-      <li data-target="profil">Profil</li>
-      <li data-target="perusahaan">Perusahaan</li>
-      <li data-target="sop">SOP</li>
-      <li data-target="proses">Proses</li>
-      <li data-target="alatberat">Alat Berat</li>
-      <li data-target="lokasi">Lokasi</li>
-    </ul>
-  </nav>
+    
+    <nav>
+        <h1>PT PAMA PERSADA NUSANTARA</h1>
+        <ul>
+            <li class = "home-btn">Home</li>
+            <li data-target="profil">Profil</li>
+            <li data-target="perusahaan">Perusahaan</li>
+            <li data-target="sop">SOP</li>
+            <li data-target="proses">Proses</li>
+            <li data-target="alatberat">Alat Berat</li>
+            <li data-target="lokasi">Lokasi</li>
+        </ul>
+    </nav>
+    
+</style>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>Tambang Aman & Produktif</h1>
@@ -170,7 +189,7 @@
     </div>
   </section>
 
-  <!-- Sections -->
+
   <section id="profil" class="hidden-section">
     <h2>Profil Kelompok</h2>
     <p>Nama Kelompok: Anakan Tambang</p>
@@ -213,14 +232,38 @@
 
   <section id="alatberat">
     <h2>Alat Berat Operasional</h2>
-    <div class="grid grid-2">
-      <div class="card"><h3>Excavator</h3><p>Penggalian dan loading.</p></div>
-      <div class="card"><h3>Dozer</h3><p>Spreading dan ripping.</p></div>
-      <div class="card"><h3>Grader</h3><p>Perataan jalan hauling.</p></div>
-      <div class="card"><h3>Dumptruck</h3><p>Hauling batubara.</p></div>
-      <div class="card"><h3>Water Truck</h3><p>Pengendalian debu.</p></div>
-      <div class="card"><h3>Crane & Forklift</h3><p>Pengangkatan di workshop.</p></div>
-    </div>
+     <div class="grid grid-2">
+
+            <div class="card alat-berat" onclick="toggleImage('img-excavator')">
+        <h3>Excavator</h3><p>Penggalian dan loading.</p>
+        <img id="img-excavator" src="https://img.freepik.com/premium-photo/excavator-construction_118124-174332.jpg" alt="Contoh Excavator" class="alat-berat-img">
+      </div>
+      
+            <div class="card alat-berat" onclick="toggleImage('img-dozer')">
+        <h3>Dozer</h3><p>Spreading dan ripping.</p>
+                <img id="img-dozer" src="https://i.ytimg.com/vi/PrQTRnZmQYg/maxresdefault.jpg" alt="Contoh Dozer" class="alat-berat-img">
+      </div>
+      
+            <div class="card alat-berat" onclick="toggleImage('img-grader')">
+        <h3>Grader</h3><p>Perataan jalan hauling.</p>
+                <img id="img-grader" src="https://img.freepik.com/premium-photo/grader_51195-2175.jpg" alt="Contoh Grader" class="alat-berat-img">
+      </div>
+      
+            <div class="card alat-berat" onclick="toggleImage('img-dumptruck')">
+        <h3>Dumptruck</h3><p>Hauling batubara.</p>
+                <img id="img-dumptruck" src="https://wallpapercave.com/wp/wp10814087.jpg" alt="Contoh Dumptruck" class="alat-berat-img">
+        </div>
+
+            <div class="card alat-berat" onclick="toggleImage('img-water-truck')">
+        <h3>Water Truck</h3><p>Pengendalian debu.</p>
+            <img id="img-water-truck" src="https://media.istockphoto.com/id/1417047892/id/foto/rendering-3d-truk-pengiriman-air-dengan-latar-belakang-putih.jpg?s=612x612&w=0&k=20&c=xM9Da2Q0iqnmW0SSuz5vgKKrQUipvLYmuQwRaNiXlEI=" alt="Contoh Water Truck" class="alat-berat-img">
+        </div>
+ 
+             <div class="card alat-berat" onclick="toggleImage('img-crane-forklift')">
+         <h3>Crane & Forklift</h3><p>Pengangkatan di workshop.</p>
+             <img id="img-crane-forklift" src="https://th.bing.com/th/id/R.3486c51fd9cbd0a781c6e82ccede9bfa?rik=bif0g1O%2bXX7wMw&riu=http%3a%2f%2fproliftcrane.com%2fwp-content%2fuploads%2fcrawler-crane-1024x749.jpg&ehk=mCLywfJuEMvqnHNk%2fhUb%2f0feB2tQ%2byixydsVDqkxYgI%3d&risl=&pid=ImgRaw&r=0" alt="Contoh Crane & Forklift" class="alat-berat-img">
+        </div>
+     </div>
   </section>
 
 <section id="lokasi">
@@ -240,7 +283,30 @@
 
 
     <script>
-  const navItems = document.querySelectorAll("nav ul li");
+    
+/* === KODE BARU UNTUK TOGGLE GAMBAR === */
+function toggleImage(imageId) {
+    const targetImage = document.getElementById(imageId);
+    
+    // Sembunyikan semua gambar alat berat lain
+    const allImages = document.querySelectorAll('.alat-berat-img');
+    allImages.forEach(img => {
+        if (img.id !== imageId) {
+            img.style.display = 'none';
+        }
+    });
+
+    // Toggle tampilan gambar yang diklik
+    if (targetImage.style.display === 'block') {
+        targetImage.style.display = 'none'; // Sembunyikan
+    } else {
+        targetImage.style.display = 'block'; // Tampilkan
+    }
+}
+/* ===================================== */
+    
+// Kode JS Navigasi yang sudah ada:
+  const navItems = document.querySelectorAll("nav ul li");
 
   navItems.forEach(item => {
     item.addEventListener("click", () => {
@@ -267,13 +333,13 @@
 const homeBtn = document.querySelector(".home-btn");
 
 homeBtn.addEventListener("click", () => {
-  // scroll balik ke HERO
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
 
-  // tampilkan semua section
+
   document.querySelectorAll("section").forEach(sec => {
     sec.style.display = "block";
   });
