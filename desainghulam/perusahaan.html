@@ -1,312 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Perusahaan Tambang [Nama Perusahaan]</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@300;400&display=swap"
-    rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PT. PAMA PERSADA — Profil Perusahaan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* --- Bagian CSS Profesional --- */
     :root {
-      --warna-primer: #1c2833;
-      /* Dark Navy/Charcoal - Kuat */
-      --warna-sekunder: #d4af37;
-      /* Gold/Emas Tua - Mewah/Kekuatan */
-      --warna-latar: #f4f4f4;
-      --warna-teks: #333;
-      --font-judul: 'Poppins', sans-serif;
-      --font-teks: 'Merriweather', serif;
+      --green-900: #0b4f2b;
+      --green-700: #177a45;
+      --green-500: #28a063;
+      --green-300: #8de0b2;
+      --muted: #6b7280;
+      --bg: #f6fbf7;
+      --glass: rgba(255, 255, 255, 0.6);
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
     }
 
     body {
-      font-family: var(--font-teks);
       margin: 0;
-      padding: 0;
-      background-color: var(--warna-latar);
-      color: var(--warna-teks);
-      line-height: 1.7;
-    }
-
-    /* HEADER & NAVIGATION */
-    .header-perusahaan {
-      background-color: var(--warna-primer);
-      color: white;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 30px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: url('https://wbpu.co.id/wp-content/uploads/2023/10/Banner-paling-atas-scaled.jpg') center/cover no-repeat;
+      color: var(--green-900);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      padding: 32px 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* Header / Nav */
+    header {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .logo {
-      font-family: var(--font-judul);
-      font-size: 1.8em;
-      font-weight: 700;
-      color: white;
-    }
-
-    .logo span {
-      color: var(--warna-sekunder);
-      /* Aksen emas pada nama perusahaan */
-    }
-
-    .menu {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--green-700), var(--green-500));
       display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 6px 18px rgba(8, 46, 25, 0.12);
     }
 
-    .menu li a {
-      font-family: var(--font-judul);
-      color: white;
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .nav-link {
+      padding: 10px 14px;
+      border-radius: 10px;
       text-decoration: none;
-      padding: 10px 20px;
-      margin-left: 10px;
-      transition: all 0.3s ease;
-      border-bottom: 2px solid transparent;
-      /* Garis bawah elegan */
+      color: var(--green-900);
       font-weight: 600;
+      transition: all .18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .menu li a:hover,
-    .menu li a.active {
-      color: var(--warna-sekunder);
-      border-bottom: 2px solid var(--warna-sekunder);
+    .nav-link:hover {
+      background: rgba(39, 122, 77, 0.08);
+      transform: translateY(-2px)
     }
 
-    /* MAIN CONTENT */
-    .main-content {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 30px;
+    .cta {
+      background: var(--green-700);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700
     }
 
-    .section-profil {
-      background-color: white;
-      padding: 40px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      opacity: 0;
-      /* Diatur oleh JS */
-      transform: translateY(20px);
-      /* Diatur oleh JS */
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      display: none;
-      /* Sembunyikan semua secara default */
+    .cta:hover {
+      filter: brightness(.98);
+      transform: translateY(-1px)
     }
 
-    .section-profil.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 28px;
     }
 
-    .section-profil h2 {
-      font-family: var(--font-judul);
-      color: var(--warna-primer);
-      border-bottom: 3px solid var(--warna-sekunder);
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-      font-size: 2em;
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8));
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15, 50, 24, 0.06)
     }
 
-    /* SEJARAH */
-    .sejarah-poin {
-      display: flex;
-      margin-bottom: 20px;
-      align-items: flex-start;
-    }
-
-    .sejarah-tahun {
-      font-family: var(--font-judul);
-      font-size: 1.5em;
+    .kicker {
+      display: inline-block;
+      background: var(--green-300);
+      color: var(--green-900);
+      padding: 6px 10px;
+      border-radius: 999px;
       font-weight: 700;
-      color: var(--warna-sekunder);
-      min-width: 80px;
-      margin-right: 20px;
-      text-align: right;
+      font-size: 13px
     }
 
-    .sejarah-detail {
-      border-left: 2px solid var(--warna-sekunder);
-      padding-left: 20px;
+    h1 {
+      margin: 12px 0 6px;
+      font-size: 28px;
+      line-height: 1.05
     }
 
-    /* TUJUAN */
-    .tujuan-list {
-      list-style: none;
-      padding: 0;
+    p.lead {
+      color: var(--muted);
+      margin: 0 0 16px
     }
 
-    .tujuan-list li {
-      font-family: var(--font-judul);
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      padding-left: 30px;
-      position: relative;
-      color: var(--warna-primer);
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px
     }
 
-    .tujuan-list li:before {
-      content: "⛏";
-      /* Simbol Pahat/Pickaxe atau ikon lain */
-      position: absolute;
-      left: 0;
-      color: var(--warna-sekunder);
-      font-size: 1.2em;
-      top: 0;
+    .stat {
+      background: #fff;
+      padding: 12px;
+      border-radius: 10px;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(12, 40, 20, 0.04)
     }
 
-    .tujuan-deskripsi {
-      font-family: var(--font-teks);
-      font-size: 0.95em;
-      color: #555;
+    .stat strong {
       display: block;
-      margin-top: 5px;
+      font-size: 18px;
+      color: var(--green-900)
+    }
+
+    /* Card for menu content */
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(12, 40, 20, 0.04);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center
+    }
+
+    /* Responsive */
+    @media (max-width:920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#" aria-label="PT PAMA PERSADA home">
+        <div class="logo">PP</div>
+        <div>
+          <div style="font-weight:800">PT. PAMA PERSADA</div>
+          <div style="font-size:12px;color:var(--muted)">Pertambangan | Keberlanjutan | Keamanan</div>
+        </div>
+      </a>
 
-  <header class="header-perusahaan">
-    <div class="nav-container">
-      <div class="logo">PAMA<span>PERSADA</span></div>
-      <nav>
-        <ul class="menu">
-          <li><a href="#" id="menu-sejarah" class="active" data-target="sejarah">Sejarah Perusahaan</a></li>
-          <li><a href="#" id="menu-tujuan" data-target="tujuan">Tujuan Perusahaan</a></li>
-        </ul>
+      <nav role="navigation" aria-label="Main navigation">
+        <a class="nav-link" href="EL.html">Beranda</a>
+        <a class="nav-link" href="#tujuan">Tujuan Perusahaan</a>
+        <a class="nav-link" href="#sejarah">Sejarah Perusahaan</a>
+        <a class="cta" href="#kontak">Hubungi</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <div class="main-content">
+    <main>
+      <section class="hero">
+        <div class="hero-card card">
+          <span class="kicker">Profil Perusahaan</span>
+          <h1>PT. PAMA PERSADA</h1>
+          <p class="lead">PT. PAMA PERSADA bergerak di bidang pertambangan dengan komitmen pada praktik yang
+            berkelanjutan, keselamatan kerja, dan pemberdayaan komunitas lokal. Kami memadukan keahlian teknis dengan
+            standar lingkungan yang ketat.</p>
 
-    <section id="sejarah" class="section-profil active">
-      <h2>Sejarah Perusahaan</h2>
-      <p>Sejak didirikan, MinePRO telah berkomitmen pada praktik pertambangan yang bertanggung jawab dan inovasi
-        berkelanjutan. Berikut adalah perjalanan penting kami:</p>
+          <div class="stats">
+            <div class="stat">
+              <small>Didirikan</small>
+              <strong>2005</strong>
+            </div>
+            <div class="stat">
+              <small>Karyawan</small>
+              <strong>~850</strong>
+            </div>
+            <div class="stat">
+              <small>Lokasi Operasi</small>
+              <strong>Indonesia</strong>
+            </div>
+          </div>
 
-      <div class="sejarah-poin">
-        <div class="sejarah-tahun">1995</div>
-        <div class="sejarah-detail">
-          <strong>Pendirian Awal</strong>
-          <p>Perusahaan didirikan dengan fokus pada eksplorasi mineral di wilayah [Nama Lokasi]. Mendapat izin
-            eksploitasi pertama.</p>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <a class="nav-link" href="#tujuan">Lihat Tujuan</a>
+            <a class="nav-link" href="#sejarah">Lihat Sejarah</a>
+          </div>
         </div>
-      </div>
 
-      <div class="sejarah-poin">
-        <div class="sejarah-tahun">2008</div>
-        <div class="sejarah-detail">
-          <strong>Ekspansi dan Sertifikasi</strong>
-          <p>Memperluas operasi ke wilayah [Nama Wilayah Baru]. Mendapatkan sertifikasi internasional ISO 14001 untuk
-            manajemen lingkungan.</p>
-        </div>
-      </div>
+        <aside class="card" aria-label="Ringkasan Keamanan dan Lingkungan">
+          <h3 style="margin-top:0;margin-bottom:6px">Keamanan & Lingkungan</h3>
+          <p style="margin:0 0 12px;color:var(--muted)">Keselamatan pekerja dan pengelolaan lingkungan adalah prioritas
+            utama kami. Setiap proyek dilaksanakan berdasarkan RKL/RPL, audit internal, dan pelatihan keselamatan
+            berkala.</p>
 
-      <div class="sejarah-poin">
-        <div class="sejarah-tahun">2020</div>
-        <div class="sejarah-detail">
-          <strong>Inovasi Teknologi</strong>
-          <p>Mengimplementasikan teknologi pertambangan otomatis dan robotik untuk meningkatkan efisiensi dan keamanan
-            operasional.</p>
-        </div>
-      </div>
+          <div class="two-col">
+            <div>
+              <h4 style="margin:0 0 6px">Sertifikasi</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--muted)">
+                <li>ISO 45001 - K3</li>
+                <li>ISO 14001 - Lingkungan</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="margin:0 0 6px">CSR</h4>
+              <p style="margin:0;color:var(--muted)">Program pemberdayaan masyarakat: pelatihan, kesehatan, dan
+                infrastruktur.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
 
-    </section>
+      <section id="tujuan" class="card" style="margin-bottom:18px">
+        <h2 style="margin-top:0">Tujuan Perusahaan</h2>
+        <p>PT. PAMA PERSADA bertujuan untuk:</p>
+        <ol>
+          <li>Menyediakan sumber daya tambang secara efisien dengan standar keselamatan tinggi.</li>
+          <li>Mengimplementasikan praktik pertambangan yang ramah lingkungan dan berkelanjutan.</li>
+          <li>Memberdayakan masyarakat lokal melalui program CSR yang terukur.</li>
+          <li>Mencapai pertumbuhan yang bertanggung jawab dan memberikan nilai bagi pemangku kepentingan.</li>
+        </ol>
+      </section>
 
-    <section id="tujuan" class="section-profil">
-      <h2>Tujuan Perusahaan</h2>
-      <p>Tujuan strategis kami mencakup tiga pilar utama: Operasi Berkelanjutan, Keunggulan Operasional, dan Tanggung
-        Jawab Sosial (CSR).</p>
+      <section id="sejarah" class="card">
+        <h2 style="margin-top:0">Sejarah Perusahaan</h2>
+        <p style="color:var(--muted)">PT. PAMA PERSADA didirikan pada tahun 2005 oleh sekelompok profesional
+          pertambangan yang berpengalaman. Sejak awal, perusahaan fokus pada eksplorasi dan pengembangan area tambang di
+          Indonesia dengan pendekatan yang mengutamakan keselamatan dan kepatuhan lingkungan. Seiring waktu, perusahaan
+          berkembang ke operasi produksi skala menengah dan memperluas program CSR untuk komunitas di sekitar lokasi
+          operasi.</p>
 
-      <ul class="tujuan-list">
-        <li>
-          Keunggulan Operasional
-          <span class="tujuan-deskripsi">Mencapai tingkat efisiensi dan produktivitas tertinggi melalui adopsi teknologi
-            terdepan dan standar keamanan yang ketat.</span>
-        </li>
-        <li>
-          Keberlanjutan Lingkungan
-          <span class="tujuan-deskripsi">Berkomitmen pada praktik tambang yang ramah lingkungan, termasuk reklamasi
-            lahan pasca-tambang dan pengurangan jejak karbon.</span>
-        </li>
-        <li>
-          Kesejahteraan Komunitas
-          <span class="tujuan-deskripsi">Meningkatkan kualitas hidup masyarakat lokal melalui program pendidikan,
-            kesehatan, dan pemberdayaan ekonomi.</span>
-        </li>
-      </ul>
-    </section>
+        <h4 style="margin-top:12px">Tonggak penting</h4>
+        <ul style="color:var(--muted)">
+          <li>2005 — Pendirian dan kegiatan eksplorasi awal.</li>
+          <li>2010 — Memulai operasi produksi komersial.</li>
+          <li>2016 — Penerapan program K3 terintegrasi dan sertifikasi awal.</li>
+          <li>2022 — Perluasan program lingkungan dan efisiensi energi.</li>
+        </ul>
+      </section>
 
+      <section id="kontak" class="card" style="margin-top:18px">
+        <h3 style="margin-top:0">Kontak</h3>
+        <p style="margin:0;color:var(--muted)">Alamat kantor pusat • Email: info@pamapersada.co.id • Telepon: (021)
+          555-0123</p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> PT. PAMA PERSADA — Semua hak dilindungi.
+    </footer>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuLinks = document.querySelectorAll('.menu a');
-      const sections = document.querySelectorAll('.section-profil');
-
-      // Fungsi untuk menampilkan seksi yang dipilih
-      function showSection(targetId) {
-        // Sembunyikan semua seksi
-        sections.forEach(section => {
-          section.classList.remove('active');
-          section.style.display = 'none';
-          // Reset animasi
-          section.style.opacity = '0';
-          section.style.transform = 'translateY(20px)';
-        });
-
-        // Tampilkan seksi yang ditargetkan
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.style.display = 'block';
-          // Tunda sedikit untuk memicu transisi/animasi
-          setTimeout(() => {
-            targetSection.classList.add('active');
-          }, 50);
-        }
-      }
-
-      // Fungsi untuk mengaktifkan menu
-      function setActiveMenu(targetElement) {
-        menuLinks.forEach(link => link.classList.remove('active'));
-        targetElement.classList.add('active');
-      }
-
-      // Tambahkan event listener ke setiap menu link
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('data-target');
-          showSection(targetId);
-          setActiveMenu(this);
-        });
-      });
-
-      // Inisialisasi: Tampilkan seksi "Sejarah Perusahaan" saat pertama kali dimuat
-      showSection('sejarah');
-      setActiveMenu(document.getElementById('menu-sejarah'));
-    });
+    // Auto-update year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 
 </html>
