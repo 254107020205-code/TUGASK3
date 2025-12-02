@@ -27,10 +27,10 @@
                 --light: #f9fafb;
             }
             body {
-                font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        margin: 0;
     }
     h1, h2, h3 {
       font-family: 'Oswald', sans-serif;
@@ -76,8 +76,6 @@
       width: 100%;
     }
 
-
-    
     
     .hero {
         position: relative;
@@ -163,7 +161,7 @@
 </style>
 </head>
 <body>
-
+    
     
     <nav>
         <h1>PT PAMA PERSADA NUSANTARA</h1>
@@ -178,7 +176,7 @@
         </ul>
     </nav>
     
-</style>
+
 
   <section id="home-content"> 
     <div class="hero">
@@ -192,7 +190,7 @@
 </section>
 
 
-  <section id="profil" class="content-section hidden-section">
+  <section id="profil" class="content-section">
     <h2>Profil Kelompok</h2>
     <p>Nama Kelompok: Anakan Tambang</p>
     <ul>
@@ -279,76 +277,80 @@
     allowfullscreen="" 
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
-</iframe>"
-    
-  </iframe>
+</iframe>
 
 </section>
 
 
-    <script>
+<script>
     
-/* === KODE BARU UNTUK TOGGLE GAMBAR === */
+
 function toggleImage(imageId) {
     const targetImage = document.getElementById(imageId);
-    
-    // Sembunyikan semua gambar alat berat lain
     const allImages = document.querySelectorAll('.alat-berat-img');
     allImages.forEach(img => {
         if (img.id !== imageId) {
             img.style.display = 'none';
         }
     });
-
-    // Toggle tampilan gambar yang diklik
     if (targetImage.style.display === 'block') {
-        targetImage.style.display = 'none'; // Sembunyikan
+        targetImage.style.display = 'none';
     } else {
-        targetImage.style.display = 'block'; // Tampilkan
-    }
+        targetImage.style.display = 'block';
+    }   
 }
-/* ===================================== */
-    
-// Kode JS Navigasi yang sudah ada:
-  const navItems = document.querySelectorAll("nav ul li");
 
-  navItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const targetId = item.getAttribute("data-target");
-      const targetSection = document.getElementById(targetId);
+const navItems = document.querySelectorAll("nav ul li");
+const homeContent = document.getElementById('home-content');
 
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 60,
-          behavior: "smooth"
-        });
+const contentSections = document.querySelectorAll('#profil, #perusahaan, #sop, #proses, #alatberat, #lokasi'); 
 
-        document.querySelectorAll("section").forEach(sec => {
-          if (sec.id !== targetId) {
-            sec.style.display = "none";
-          }
-        });
 
-        targetSection.style.display = "block";
-      }
+function hideAllContent() {
+    homeContent.style.display = 'none';
+    contentSections.forEach(sec => {
+        sec.style.display = 'none';
     });
-  });
-
-const homeBtn = document.querySelector(".home-btn");
-
-homeBtn.addEventListener("click", () => {
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+}
 
 
-  document.querySelectorAll("section").forEach(sec => {
-    sec.style.display = "block";
-  });
+window.addEventListener('load', () => {
+    hideAllContent(); 
+    homeContent.style.display = 'block'; 
 });
-    </script>
+
+
+navItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const targetId = item.getAttribute("data-target");
+        
+        
+        if (item.classList.contains('home-btn')) {
+            hideAllContent(); 
+            homeContent.style.display = 'block'; 
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            
+        
+            document.querySelectorAll('.alat-berat-img').forEach(img => {
+                img.style.display = 'none';
+            });
+            return;
+        }
+
+        
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            hideAllContent(); 
+
+            targetSection.style.display = "block"; 
+            window.scrollTo({
+                top: targetSection.offsetTop - 60,
+                behavior: "smooth"
+            });
+        }
+    });
+});
+</script>
 
 </body>
 </html>
