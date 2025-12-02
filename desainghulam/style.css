@@ -162,7 +162,7 @@ section:last-child {
 
 /* Hero Section */
 .hero-section {
-  background: url('ti2.jpg') center/cover no-repeat;
+  background: url('ti6.jpg') center/cover no-repeat;
   color: var(--light-text);
   text-align: center;
   padding: 100px 20px;
@@ -171,7 +171,7 @@ section:last-child {
 .hero-content h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  color: var(--light-text);
+  color: #ffffff;
 }
 
 
