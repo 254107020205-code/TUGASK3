@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Produktif WFH (Satu File)</title>
+
+    <style>
+        /* Pengaturan dasar untuk seluruh halaman */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            /* Warna latar belakang halaman (Light) */
+            color: #333;
+            /* Warna teks utama (Light) */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Pengaturan tata letak utama (artikel) */
+        main {
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            /* Warna latar belakang artikel (Light) */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #007bff;
+            margin-top: 0;
+            font-size: 2.2em;
+            transition: color 0.3s;
+        }
+
+        /* Judul bagian */
+        h2 {
+            color: #333;
+            border-left: 5px solid #ffaa00;
+            padding-left: 10px;
+            margin-top: 25px;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        /* Daftar (list) */
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Blockquote (untuk kutipan atau poin kunci) */
+        blockquote {
+            background-color: #e6f7ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            transition: background-color 0.3s;
+        }
+
+        /* Bagian Kesimpulan */
+        .kesimpulan {
+            border-top: 1px dashed #ccc;
+            padding-top: 20px;
+            margin-top: 30px;
+            transition: border-top 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            color: #777;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        /* --- Navigasi dan Dark Mode Toggle --- */
+
+        nav {
+            background-color: #007bff;
+            /* Warna biru untuk navbar (Light) */
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffaa00;
+            /* Kuning saat hover */
+        }
+
+        .nav-content {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dark-mode-toggle {
+            background: #ffffff;
+            color: #007bff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background: #f0f0f0;
+        }
+
+        /* --- Gaya Dark Mode --- */
+
+        body.dark-mode {
+            background-color: #121212;
+            /* Latar belakang halaman gelap */
+            color: #e0e0e0;
+            /* Teks utama terang */
+        }
+
+        body.dark-mode main {
+            background-color: #1e1e1e;
+            /* Latar belakang artikel gelap */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode header h1 {
+            color: #90caf9;
+            /* Biru muda yang lebih lembut */
+        }
+
+        body.dark-mode header {
+            border-bottom: 2px solid #90caf9;
+        }
+
+        body.dark-mode h2 {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode blockquote {
+            background-color: #2c2c2c;
+            border-left: 4px solid #90caf9;
+        }
+
+        body.dark-mode .kesimpulan {
+            border-top: 1px dashed #555;
+        }
+
+        body.dark-mode footer {
+            color: #a0a0a0;
+        }
+
+        body.dark-mode nav {
+            background-color: #333;
+            /* Warna gelap untuk navbar */
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #444;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <ul>
+                <li><a href="EL.html">Beranda</a></li>
+                <li><a href="#main-content">AWAL</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-toggle">Mode Gelap</button>
+        </div>
+    </nav>
+
+    <header id="top">
+        <h1>STANDAR OPERASIONAL PERUSAHAAN</h1>
+        <p>Tentang Prosedur Perusahaan Tambang</p>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h1>Keselamatan Kerja : </h1>
+            <h2>1. Sistem penambangan berjenjang (Reclamation area) untuk mempertahankan kelangsungan hidup hutan.
+            </h2>
+
+            <p>Apa itu reclamation area?
+        Memulihkan area yang sudah di rekayasa agar bisa digunakan Kembali, dengan cara?
+<p>1.	Landform reshaping ( bentuk ulang kontur)</p>
+    <ul>Tanah bekas galian dibentuk ulang atau diratakan, bisa juga dijadikan terasering</ul>
+<p>2.	Soil treatment (perbaikan tanah)</p> 
+    <ul>2.1	Menambahkan topsoil (lapisan tanah yang subur)</ul> 
+    <ul>2.2	Campur kompos, biochar atau pupuk organic.</ul>
+    <ul>2.3	Netralin pH jika terlalu asam atau basa.</ul>
+<p>3.	Revegetasi (penanaman ulang)</p>
+    <ul>3.1	Tanam rumput, Semak , pohon local</ul>
+    <ul>3.2	Pilih tanaman pionir yang tahan dengan kondisi ekstreme terlebih dahulu</ul>
+    <ul>3.3	Jika sudah stabil, baru ditanam tanaman untuk jangka Panjang</ul>
+<p>4.	Drainase dan air</p>
+    <ul>4.1	Bikin saluran air, kolam resapan dan system irigasi</ul>
+    <ul>4.2	Pastikan air bisa mengalir dengan lancer dan tidak menyebabkan erosi</ul>
+<p>5.	Monitoring dan maintenance</p>
+    <ul>5.1	pantau pertumbuhan tanaman, kualitas tanah dan air</ul>
+    <ul>5.2	Lakukan perbaikan Kembali jika ada yang gagal atau rusak</ul>
+
+        </section>
+
+<section>
+    <hr>
+        <h2>2. Pemasangan rambu lalu lintas di area tambang</h2>
+        <p>Tujuannya untuk menjaga keselamatan pekerja dan kendaraan operasional, memberikan informasi yang jelas, mencegah kecelakaan</p>
+
+        <p>Macam macam rambu lalu lintas tambang : </p>
+<ul>1.	Perintah : Mengatur Tindakan wajib (Stop, belok kanan)</ul>
+<ul>2.	Peringatan : Memberi info potensi bahaya ( tikungan tajam, tanjakan)</ul>
+<ul>3.	Petunjuk : Memberi arah atau info Lokasi (Zona parkir, PIT A)</ul>
+<ul>4.	Larangan : Melarang Tindakan tertentu (Dilarang parkir, Dilarang mendahului)</ul>
+
+        <p> Spesifikasi rambu tambang : </p>
+    <ul>1.	Material : Plat galvanis atau plastic tahan cuaca</ul>
+    <ul>2.	Ukuran : Minimum 60x60 cm, disesuaikan dengan jarak pandang</ul>
+    <ul>3.	Warna : Sesuai standar SNI</ul>
+    <ul>4.	Pemasangan : Ketinggian 1.5 – 2 meter dari permukaan jalan, jarak minimal 50 meter sebelum titik kritis.</ul>
+
+        <p>Pemeliharaan dan inspeksi : </p>
+    <ul>1. Frekuensi : Minimal 1 Bulan sekali</ul>
+    <ul>2. Kegiatan : Pengecekan fisik, kebersihan, dan visibilitas</ul>
+    <ul>3. Tindakan : Ganti rambu yang rusak, bersihkan rambu yang buram, laporkan ke supervisor</ul>
+</section>
+
+<hr>
+    <section>
+
+            <h2>3. Pelatihan dan ijin pengoprasian alat</h2>
+            <p>Yang dilakukan oleh Operating Training Department (OTD)</p>
+        <p>Tujuan : </p>
+            <ul>- Menjamin bahwa seluruh operator alat berat memiliki kompetensi teknis dan sertifikasi resmi</ul>
+            <ul>- Mencegah kecelakaan kerja akibat pengoperasian oleh personel tidak terlatih</ul>
+            <ul>- Memenuhi regulasi k3 dan ketenagakerjaan yang berlaku</ul>
+
+        <p>Untuk referensi regulasi tercantum pada : </p>
+            <ul>- Permenaker No. 8 tahun 2020 ( tentang keselamatan dan Kesehatan kerja di tempat kerja )</ul>
+            <ul>- Kepdirjen Minerba No. 185.K/37.04./DJB/2019 (Tentang pedoman teknis keselamatan pertambangan mineral dan batu bara)</ul>
+            <ul>- UU No. 13 Tahun 2003 Tentang ketenagakerjaan (paying hukum pelatihan kerja dan sertifikasi kompetensi)</ul>
+            <ul>- SIO (Surat izin operator) dari kemnaker RI, Sertifikasi resmi yang wajib dimiliki operator alat berat</ul>
+        
+    </section>
+
+        <section>
+            <hr>
+            <h2>4. Pengelolaan dan pengendalian peralatan bergerak dan bermotor berupa : </h2>
+        <ul>- Perawatan terencana</ul>
+        <ul>- P2H (Pelaksanaan Perawatan Harian)</ul>
+        <ul>- Larangan pengoperasian alat tanpa ijin</ul>
+        <ul>- Persiapan dalam keadaan darurat</ul>
+        <ul>- Pemenuhan kelengkapan (persyaratan pada peralatan)</ul> 
+        <ul>- Izin kendaraan untuk menuju site</ul>
+
+    </section>
+
+    <section>
+            <hr>
+            <h2>5. Adanya alat alat peringatan pada kendaraan, berupa :</h2>
+        <ul>- Sistem klakson</ul>
+        <ul>- Sistem alarm mundur</ul>
+        <ul>- Rotary lamp</ul>
+        <ul>- Bender (buggy whip) khusus kendaraan kecil (kendaraan sarana)</ul>
+
+    </section>
+
+    <section>
+            <hr>
+            <h2>6. Alat pelindung diri (APD)</h2>
+        <p>APD di area tambang meliputi : </p>
+        <h3>Safety Helmet</h3>
+        <li>Material : Polycarbonate atau ABS yang tahan benturan</li>
+        <li>Standard : SNI 1811-2007 atau ISO 3873</li>
+        <h3>Safety Shoes</h3>
+        <li>Standard : SNI 7079:2021 atau ISO 20345</li>
+        <h3>Safety Belt</h3>
+        <li>Standard : EN 361 atau ANSI Z359</li>
+        <h3>Safety Glasses</h3>
+        <li>Fitur : Lensa anti gores dan anti kabut</li>
+        <li>Standard : ANSI Z87,1 atau EN 166</li>
+        <h3>Ear plug dan Earmuff</h3>
+        <li>Standard : SNI 8158:2015</li>
+        <h3>Masker Respirator</h3>
+        <LI>Standard : NIOSH 42 CFR 84 atau EN 143</LI>
+        <h3>High Visibility Clothing</h3>
+        <li>Material : Polysester tahan api atau bahan anti statis</li>
+        <li>Standar : ISO 20471</li>
+        <h3>Safety Gloves</h3>
+        <h3>Face Shield</h3>
+        <h3>Dekektor gas</h3>
+        <h3>Apron atau coverall</h3>
+        <li>Material : Nomex atau kevlar untuk area beresiko tinggi</li>
+
+    </section>
+
+    <section>
+            <hr>
+            <h2>7. Upaya penanggulangan kebakaran : </h2>
+        <ul>- Penyediaan APAR, setiap 15 meter pada setiap ruangan atau bangunan, dan 1 APAR untuk setiap mobil sarana dan alat alat berat</ul>
+        <ul>- Pengecekan dan rekondisi APAR setiap 6 bulan sekali</ul>
+        <ul>- Peltihan pemadam kebakaran oleh SHE Division</ul>
+
+    </section>
+
+    <section>
+            <hr>
+            <h2>8. Kesiapan dalam keadaan darurat</h2>
+            <p>Yang terdapat pada elemen PSMS : </p>
+        <ul>A. Team penanggulangan keadaan darurat : </ul>
+        <ul>- First aid ticker</ul>
+        <ul>- Komunikasi</ul>
+        <ul>- Supervisor ( Yang mengorganisir alat alat yang diperlukan dalam menangani kecelakaan )</ul>
+        <ul>- Team ( Yang bertugas membantu memperlancar pengoperasian alat )</ul>
+        <ul>B. Aturan penggunaan radio</ul>
+        <ul>C. Jalur informasi</ul>
+        <ul>D. Laporan Tertulis</ul>
+
+    </section>
+
+
+    <section>
+        <h1>PELAYANAN KESEHATAN DAN GIZI KERJA</h1>
+        <h2>Kesehatan kerja: </h2>
+        <h3> 1. Medical Check Up (MCU) </h3>
+        <ul><li>  MCU bagi karyawan baru : bertujuan untuk menilai kondisi Kesehatan calon karyawan, mendeteksi penyakit atau  gangguan Kesehatan, dan memenuhi standar K3 </li> </ul>
+<ul><li>   MCU tahunan bagi karyawan yang bekerja: bertujuan untuk memastikan karyawan tetap fit to work, mendeteksi dini penyakit akibat kerja, dan menjaga produktivitas dan keselamatan kerja. </li></ul>  
+
+<h3> 2. Pelaksanaan pemeriksaan Kesehatan sebelum kerja yang meliputi, pemeriksaan: </h3>
+<ul><li>  Thoraxphoto: prosedur pencitraan medis menggunakan sinar-X untuk melihar kondisi organ dalam rongga dada, terutama paru-paru dan jantung.</li> </ul>
+<ul><li>  Urine lengkap: tes laboratorium yang menganalisis berbagai komponen dalam urine untuk menilai kondisi kesehatan seseorang, terutama fungsi ginjal dan saluran kemih</li> </ul>
+<ul><li>  Kimia darah: serangkaian tes laboratorium yang mengukur kadar zat-zat kimia dalam darah untuk menilai fungsi organ tubuh dan mendeteksi gangguan kesehatan. </li> </ul>
+<ul><li>  Audiometric: tes untuk mengukur kemampuan pendengaran seseorang terhadap berbagai frekuensi dan intensitas suara</li> </ul>
+<ul><li>  Spirometric: tes fungsi paru-paru yang digunakan untuk mengukur seberapa baik seseorang dapat menghirup dan menghembuskan udara. </li> </ul>
+<ul><li>  Rekam Jantung: adalah tes medis yang digunakan untuk merekam aktivitas listrik jantung. </li> </ul>
+
+<h3> 3. Untuk di lapangan kerja disediakan klinik bagi tenaga kerja yang buka selama 24 jam yang dilayani oleh paramedis yang telah mempunyai sertifikat hiperkes dan Keselamatan Kerja.</h3>
+
+<h3> 4. Pembiayaan pengobatan dan perawatan pada karyawan yang sakit maupun yang mengalami kecelakaan. </h3>
+<ul><li> Pasal 100 ayat (3) UU Kesehatan terbaru menyatakan bahwa pemberi kerja wajib menanggung biaya atas penyakit akibat kerja, gangguan kesehatan, dan cedera akibat kerja yang diderita oleh pekerja</li> </ul>
+
+
+<h3> 5. Penyediaan mobil ambulance. </h3>
+<p> Penyediaan mobil ambulans di tempat kerja merupakan bagian penting dari sistem tanggap darurat dan keselamatan kerja, terutama di sektor industri dan pertambangan. Mobil ini berfungsi sebagai unit medis bergerak yang dapat memberikan pertolongan pertama sebelum pasien dirujuk ke fasilitas kesehatan.</p> 
+
+<h3> 6. Penyuluhan Kesehatan pada karyawan kantin dan catering (jasa boga) </h3>
+
+<h3> 7. Penyediaan kotak-kotak P3K di tempat-tempat yang strategis dan terdapat pekerja yang bekerja sebagai Upaya memberikan pertolongan dini terhadap karyawan yang mengalami kecelakaan </h3>
+
+<li> - Permenaker No. PER.15/MEN/VIII/2008 tentang Pertolongan Pertama Pada Kecelakaan (P3K) di Tempat Kerja mewajibkan:</li> 
+<ul>a. Penyediaan kotak P3K sesuai jumlah pekerja dan tingkat risiko kerja</ul> 
+<ul>b. Penempatan di lokasi yang mudah terlihat dan dijangkau <ul>
+<ul>c. Penunjukan petugas P3K yang terlatih dan bersertifikat </ul>
+<p> Kotak P3K harus ditempatkan di:</p> 
+<ul>a. Area kerja utama (kantor, bengkel, gudang) </ul>
+<ul>b. Lokasi dengan potensi kecelakaan tinggi </ul>
+<ul>c. Dekat dengan jalur evakuasi atau titik kumpul </ul>
+
+<h3> 8. Team Search and Rescue (SAR). </h3>
+<p> Tim Search and Rescue (SAR) di tempat kerja berperan penting dalam penanganan keadaan darurat seperti kecelakaan, bencana alam, atau insiden yang memerlukan evakuasi cepat dan pertolongan pertama. </p>
+
+
+
+
+
+
+    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Artikel Produktivitas</p>
+    </footer>
+
+
+    <script>
+        // Mendapatkan tombol dark mode
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const darkModeKey = 'darkModeEnabled';
+
+        // Fungsi untuk menerapkan mode berdasarkan status
+        function applyDarkMode(isEnabled) {
+            if (isEnabled) {
+                body.classList.add('dark-mode');
+                toggleButton.textContent = 'Mode Terang';
+            } else {
+                body.classList.remove('dark-mode');
+                toggleButton.textContent = 'Mode Gelap';
+            }
+        }
+
+        // Memuat preferensi dari local storage saat halaman dimuat
+        const savedMode = localStorage.getItem(darkModeKey);
+        if (savedMode === 'true') {
+            applyDarkMode(true);
+        } else if (savedMode === 'false') {
+            applyDarkMode(false);
+        } else {
+            // Cek preferensi sistem operasi jika belum ada preferensi tersimpan
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyDarkMode(prefersDark);
+        }
+
+        // Menambahkan event listener ke tombol toggle
+        toggleButton.addEventListener('click', () => {
+            // Membalikkan status saat ini
+            const isDarkMode = body.classList.toggle('dark-mode');
+
+            // Menyimpan preferensi ke local storage
+            localStorage.setItem(darkModeKey, isDarkMode);
+
+            // Memperbarui teks tombol
+            toggleButton.textContent = isDarkMode ? 'Mode Terang' : 'Mode Gelap';
+        });
+    </script>
+
+</body>
+
+</html>
